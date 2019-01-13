@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UnitDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnitID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitDetailResult" type="tns:UnitXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnitXML">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UnitID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitFullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitTHFullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitENFullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCatalog" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitOrigin" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UninLevel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UnitList">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnitListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitListResult" type="tns:ArrayOfUnitXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUnitXML">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UnitXML" nillable="true" type="tns:UnitXML" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UnitListByUnitCatalog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnitCatalog" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitListByUnitCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitListByUnitCatalogResult" type="tns:ArrayOfUnitXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitListByUnitLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnitLevel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitListByUnitLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitListByUnitLevelResult" type="tns:ArrayOfUnitXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnitListByOrigins">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnitListByOriginsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnitListByOriginsResult" type="tns:ArrayOfUnitXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UnitDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitDetail" />
+  </wsdl:message>
+  <wsdl:message name="UnitDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitListSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitList" />
+  </wsdl:message>
+  <wsdl:message name="UnitListSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByUnitCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitListByUnitCatalog" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByUnitCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitListByUnitCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByUnitLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitListByUnitLevel" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByUnitLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitListByUnitLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByOriginsSoapIn">
+    <wsdl:part name="parameters" element="tns:UnitListByOrigins" />
+  </wsdl:message>
+  <wsdl:message name="UnitListByOriginsSoapOut">
+    <wsdl:part name="parameters" element="tns:UnitListByOriginsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UnitServiceSoap">
+    <wsdl:operation name="UnitDetail">
+      <wsdl:input message="tns:UnitDetailSoapIn" />
+      <wsdl:output message="tns:UnitDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <wsdl:input message="tns:UnitListSoapIn" />
+      <wsdl:output message="tns:UnitListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitCatalog">
+      <wsdl:input message="tns:UnitListByUnitCatalogSoapIn" />
+      <wsdl:output message="tns:UnitListByUnitCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitLevel">
+      <wsdl:input message="tns:UnitListByUnitLevelSoapIn" />
+      <wsdl:output message="tns:UnitListByUnitLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByOrigins">
+      <wsdl:input message="tns:UnitListByOriginsSoapIn" />
+      <wsdl:output message="tns:UnitListByOriginsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UnitServiceSoap" type="tns:UnitServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UnitDetail">
+      <soap:operation soapAction="http://tempuri.org/UnitDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <soap:operation soapAction="http://tempuri.org/UnitList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitCatalog">
+      <soap:operation soapAction="http://tempuri.org/UnitListByUnitCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitLevel">
+      <soap:operation soapAction="http://tempuri.org/UnitListByUnitLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByOrigins">
+      <soap:operation soapAction="http://tempuri.org/UnitListByOrigins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UnitServiceSoap12" type="tns:UnitServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UnitDetail">
+      <soap12:operation soapAction="http://tempuri.org/UnitDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitList">
+      <soap12:operation soapAction="http://tempuri.org/UnitList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitCatalog">
+      <soap12:operation soapAction="http://tempuri.org/UnitListByUnitCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByUnitLevel">
+      <soap12:operation soapAction="http://tempuri.org/UnitListByUnitLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitListByOrigins">
+      <soap12:operation soapAction="http://tempuri.org/UnitListByOrigins" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UnitService">
+    <wsdl:port name="UnitServiceSoap" binding="tns:UnitServiceSoap">
+      <soap:address location="http://164.115.28.164/DRG-Unit/UnitService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UnitServiceSoap12" binding="tns:UnitServiceSoap12">
+      <soap12:address location="http://164.115.28.164/DRG-Unit/UnitService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

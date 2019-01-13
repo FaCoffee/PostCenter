@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_DATA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PDF_TRADER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XML_TRADER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITIZEN_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOURCH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOURCH_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LOT_CHK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="INSERT_DATAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="INSERT_DATAResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GET_DATA_COMPLAIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="COMPLAIN_MA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PATH_XML" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PATH_PDF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_NM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_NMM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_FORMAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_FORMAT_OTHER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_CRITICON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_TYPE_CONT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_REGISTER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_MANUF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_COUNTRY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_IMPNM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_DEALER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_DIST" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_DIST_OTHER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_STCONDI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DRUG_STCONDI_OTHER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATE_DETECT" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_DETECT_TH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_FIND_CHK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_FIND_CHK_OTHER" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMPLAIN_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POSITION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DEPARTMENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FULL_ADDR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LINE_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREATE_DATE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CREATE_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CREATE_BY_TH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TR_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL1" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL2" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL3" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL4" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL5" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL6" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL7" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL8" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL9" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL10" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL11" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL12" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHYSICAL13" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHYSICAL13_OTHER" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CONTRAINER" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CONTRAINER_TEXT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LABEL" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LABEL_INPUT1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LABEL_INPUT2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LABEL_INPUT3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INFORM" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ANALYSIS" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANALYSIS_INPUT1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANALYSIS_INPUT2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ANALYSIS_INPUT3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OTHER_PLOBLEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EX_PLOBLEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EX_PLOBLEM_TEXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EX_DRUG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EX_PIC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INFORM_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INFORM_TEL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INFORM_TEL1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INFORM_EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRE_ACTION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITIZEN_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="STATUS_DATE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="REMARK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SYSTEM_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDENTIFY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCH_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LOT_CHK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECALL_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COLOR_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCOMPLAIN_MA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="COMPLAIN_MA" nillable="true" type="tns:COMPLAIN_MA" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GET_DATA_COMPLAINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GET_DATA_COMPLAINResult" type="tns:ArrayOfCOMPLAIN_MA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SV_CONNECT_COMPLAIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileds" type="tns:fileds_COMPLAIN_CLASS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="fileds_COMPLAIN_CLASS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="register" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="drg_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CREATE_DATE" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CREATE_BY" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SV_CONNECT_COMPLAINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SV_CONNECT_COMPLAINResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADD_DATA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PDF_TRADER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XML_TRADER" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITIZEN_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOURCH" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOURCH_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LOT_CHK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADD_DATAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ADD_DATAResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_DATASoapIn">
+    <wsdl:part name="parameters" element="tns:INSERT_DATA" />
+  </wsdl:message>
+  <wsdl:message name="INSERT_DATASoapOut">
+    <wsdl:part name="parameters" element="tns:INSERT_DATAResponse" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_COMPLAINSoapIn">
+    <wsdl:part name="parameters" element="tns:GET_DATA_COMPLAIN" />
+  </wsdl:message>
+  <wsdl:message name="GET_DATA_COMPLAINSoapOut">
+    <wsdl:part name="parameters" element="tns:GET_DATA_COMPLAINResponse" />
+  </wsdl:message>
+  <wsdl:message name="SV_CONNECT_COMPLAINSoapIn">
+    <wsdl:part name="parameters" element="tns:SV_CONNECT_COMPLAIN" />
+  </wsdl:message>
+  <wsdl:message name="SV_CONNECT_COMPLAINSoapOut">
+    <wsdl:part name="parameters" element="tns:SV_CONNECT_COMPLAINResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADD_DATASoapIn">
+    <wsdl:part name="parameters" element="tns:ADD_DATA" />
+  </wsdl:message>
+  <wsdl:message name="ADD_DATASoapOut">
+    <wsdl:part name="parameters" element="tns:ADD_DATAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_DRG_COMPLAINSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DATA">
+      <wsdl:input message="tns:INSERT_DATASoapIn" />
+      <wsdl:output message="tns:INSERT_DATASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_COMPLAIN">
+      <wsdl:input message="tns:GET_DATA_COMPLAINSoapIn" />
+      <wsdl:output message="tns:GET_DATA_COMPLAINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SV_CONNECT_COMPLAIN">
+      <wsdl:input message="tns:SV_CONNECT_COMPLAINSoapIn" />
+      <wsdl:output message="tns:SV_CONNECT_COMPLAINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ADD_DATA">
+      <wsdl:input message="tns:ADD_DATASoapIn" />
+      <wsdl:output message="tns:ADD_DATASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_DRG_COMPLAINSoap" type="tns:WS_DRG_COMPLAINSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DATA">
+      <soap:operation soapAction="http://tempuri.org/INSERT_DATA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_COMPLAIN">
+      <soap:operation soapAction="http://tempuri.org/GET_DATA_COMPLAIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SV_CONNECT_COMPLAIN">
+      <soap:operation soapAction="http://tempuri.org/SV_CONNECT_COMPLAIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADD_DATA">
+      <soap:operation soapAction="http://tempuri.org/ADD_DATA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_DRG_COMPLAINSoap12" type="tns:WS_DRG_COMPLAINSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="INSERT_DATA">
+      <soap12:operation soapAction="http://tempuri.org/INSERT_DATA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GET_DATA_COMPLAIN">
+      <soap12:operation soapAction="http://tempuri.org/GET_DATA_COMPLAIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SV_CONNECT_COMPLAIN">
+      <soap12:operation soapAction="http://tempuri.org/SV_CONNECT_COMPLAIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADD_DATA">
+      <soap12:operation soapAction="http://tempuri.org/ADD_DATA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_DRG_COMPLAIN">
+    <wsdl:port name="WS_DRG_COMPLAINSoap" binding="tns:WS_DRG_COMPLAINSoap">
+      <soap:address location="http://164.115.28.104/WS_POST_COMPLAIN/WS_DRG_COMPLAIN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_DRG_COMPLAINSoap12" binding="tns:WS_DRG_COMPLAINSoap12">
+      <soap12:address location="http://164.115.28.104/WS_POST_COMPLAIN/WS_DRG_COMPLAIN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="POST_CENTER_WS_AUTHENTICATION_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.104/ws_authen2/AUTHENTICATION.asmx</Value>
+    </Setting>
+    <Setting Name="POST_CENTER_WS_DRG_COMPLAIN_WS_DRG_COMPLAIN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.104/WS_POST_COMPLAIN/WS_DRG_COMPLAIN.asmx</Value>
+    </Setting>
+    <Setting Name="POST_CENTER_WS_DRUG_WS_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://regis.fda.moph.go.th/WS_XML_CENTER/WS_XML_CEN/WS_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="POST_CENTER_WS_DRUG_POST_WS_DRUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.105/WS_XML_CENTER/WS_XML_CEN/WS_DRUG.asmx</Value>
+    </Setting>
+    <Setting Name="POST_CENTER_WS_FLATTEN_WS_FLATTEN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.123/TEST_FLATEN/WS_FLATTEN.asmx</Value>
+    </Setting>
+    <Setting Name="POST_CENTER_WS_UnitService_UnitService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.164/DRG-Unit/UnitService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
